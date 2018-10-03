@@ -1,0 +1,29 @@
+<h1 class="title">
+  {{ title }}
+</h1>
+
+<button type="button" class="btn btn-success" (click)="openModal()" tooltip="Cadastrar novo cliente.">{{ nameButton }}</button>
+<br/><br/>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>        
+        <button type="button" class="btn btn-primary" tooltip="Editar registro.">Editar</button>
+        <button type="button" class="btn btn-danger" tooltip="Deletar registro.">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-modal #modal></app-modal>
